@@ -1,0 +1,30 @@
+.page-about
+  .header-links
+    position: absolute
+    right: -15%
+    top: 50%
+    transform: rotate(90deg)
+    ul
+      li
+        display: inline-block
+        margin: 0 22px
+        a
+          color: #fff
+          text-decoration: none
+          font-size: 18px
+          text-transform: none
+          position: relative
+          &:after
+            transition: all .3s ease
+            content: ''
+            position: absolute
+            background-color: #fff
+            height: 2px
+            bottom: -4px
+            left: 0
+            width: 0
+            display: none
+          &:hover
+            &:after
+              display: block
+              width: 100%

@@ -1,0 +1,59 @@
+extends ./pug/templates/base
+block vars
+  - var title='Olga Butenop portfolio'
+block content
+  .page-portfolio.page
+    header.page-header(style="background: url('./src/images/portfolio_page_bg.jpg') 0 0 no-repeat; background-size: cover;background-attachment: fixed")
+      .header-languages.hide#headerLanguagesId
+        span.lang ru
+        span.icon-multiply
+        span.lang.active en
+      .header
+        h1 portfolio
+      .header-scroller.hide#header-scroller
+        span scroll
+        span.icon-download-arrow
+      .side-scroller.hide#side_scroller
+        .icon-down-arrow#up_arrow
+        span(data-page='one', id='one', class='active')
+        span(data-page='two', id='two')
+        span(data-page='three', id='three')
+        span(data-page='four', id='four')
+        span(data-page='five', id='five')
+        span(data-page='six', id='six')
+        span(data-page='seven', id='seven')
+        span(data-page='eight', id='eight')
+        .icon-down-arrow#down_arrow
+
+    section.current-project(style="background: url('./src/images/foto.jpg') center center no-repeat; background-size: cover;")
+      h3 Current project in one photo
+      .current-project-overlay
+    section.complete-projects 
+      h3 Completed projects
+      .container
+        .project
+          a(href="#")
+            .complete-projects-item(style="background: url('./src/images/burger.jpg') center center no-repeat; background-size: cover;")
+              h4 Patterns
+            .complete-projects-item_overlay
+            .complete-projects-item-selected_overlay
+        
+        .project
+          a(href="#")
+            .complete-projects-item(style="background: url('./src/images/pic.jpg') center center no-repeat; background-size: cover;")
+              h4 15 points
+            .complete-projects-item_overlay
+            .complete-projects-item-selected_overlay
+
+        .project
+          a(href="#")
+            .complete-projects-item(style="background: url('./src/images/pic2.jpg') center center no-repeat; background-size: cover;")
+              h4 Paradise temptation
+            .complete-projects-item_overlay
+            .complete-projects-item-selected_overlay
+        .project
+          a(href="#")
+            .complete-projects-item(style="background: url('./src/images/burger.jpg') center center no-repeat; background-size: cover;")
+              h4 Paradise temptation
+            .complete-projects-item_overlay
+            .complete-projects-item-selected_overlay
