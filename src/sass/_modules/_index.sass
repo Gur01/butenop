@@ -17,6 +17,17 @@ header
     align-items: stretch
     align-content: stretch
     height: 100%
+    .hello-p
+      color: #fff
+      font-size: 36px
+      letter-spacing: 2px
+      transition: all .3s ease
+      text-align: center
+      margin: 0 70px
+      @media(max-width:960px)
+        font-size: 30px
+      @media(max-width:768px)
+        transform: rotate(-90deg)
     .header-left
       width: 50%
       height: 100%
@@ -74,7 +85,8 @@ header
         color: #fff
         text-transform: uppercase
         background: url('../images/about_bg.jpg') 0 0 repeat
-
+        @media(max-width:768px)
+          display: none
     .header-right
       padding: 16px 16px 16px 8px
       position: relative
@@ -123,7 +135,8 @@ header
         color: #fff
         text-transform: uppercase
         background: url('../images/portfolio_bg.jpg') 0 0 repeat
-
+        @media(max-width:768px)
+          display: none
   .header-scroller
     position: absolute
     z-index: 3
@@ -169,9 +182,8 @@ header
 .main-nav
   ul
     li
-      height: 40vw
-      height: 580px
-      min-height: 150px
+      height: 62vh
+      //min-height: 150px
       font-family: 'HelveticaNeueCyr'
       font-weight: bold
       text-transform: uppercase
@@ -182,10 +194,13 @@ header
       justify-content: center
       align-items: center
       position: relative
+      //transition: height .3s ease
       @media(max-width: 768px)
-        font-size: 36px
+        height: 50vh
+        font-size: 36px      
       @media(max-width: 520px)
         font-size: 24px
+        height: 30vh
       a
         color: #fff
         letter-spacing: 4px
@@ -193,7 +208,8 @@ header
         z-index: 2
       &:hover
         .bg
-          opacity: 1
+          @media(min-width: 768px)
+            opacity: 1
       .bg
         position: absolute
         left: 0
@@ -202,17 +218,10 @@ header
         bottom: 0
         opacity: 0
         transition: opacity .3s ease
-
-    li.about
-      background: url('../images/about_bg.jpg') 0 0 repeat
         
     li.artist
-      background: url('../images/artist_bg.jpg') 0 0 repeat
       a
         color: #333
-    li.publications
-      background: url('../images/header_bg.jpg') 0 0 repeat
     li.contacts
-      background: url('../images/contacts_bg.jpg') 0 0 repeat
       a
-        color: #333
+        color: #fff

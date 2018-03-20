@@ -8,27 +8,31 @@ block content
         .header-left
           .header-left-bg
           .header-left-hello
-            p hello 
-            p i'am an artist from moscow
+            p.hello-p hello 
+            p.hello-p i'am an artist from moscow
         .header-right
           .header-right-bg
             h1 Olga Butenop
           .header-right-hello
-            p Wellcome to my website
+            p.hello-p Wellcome to my website
 
       .header-scroller#header-scroller
         span scroll
         span.icon-download-arrow
     nav.main-nav
       ul
-        li.about
+        li.about#aboutId(style="background: url('./src/images/about_bg.jpg') center center repeat")
           a(href="about.html") about(cv)
-        li.portfolio(style="background: url('./src/images/portfolio_bg.jpg') 0 0 repeat")
+          .bg(style="background: url('./src/images/foto_multiplay.jpg') center center no-repeat; background-size: cover")
+        li.portfolio#portfolioId(style="background: url('./src/images/portfolio_bg.jpg') center center repeat")
           a(href="portfolio.html") portfolio
           .bg(style="background: url('./src/images/portfolio_page_bg.jpg') center center no-repeat; background-size: cover")
-        li.artist
-          a(href="portfolio.html") artist statement
-        li.publications
-          a(href="reviews.html") publications, reviwes, interviews
-        li.contacts
-          a(href="portfolio.html") contacts
+        li.artist#artistId(style="background: url('./src/images/artist_bg.jpg') center center repeat")
+          a(href="artist.html") artist statement
+          .bg(style="background: url('./src/images/foto_artist_multiplay.jpg') center center no-repeat; background-size: cover")
+        li.publications#publicationsId(style="background: url('./src/images/header_bg.jpg') center center repeat")
+          a(href="publications.html") publications, reviwes, interviews
+          .bg(style="background: url('./src/images/foto_publikationst_multiplay.jpg') center center no-repeat; background-size: cover")
+        li.contacts#contactsId(style="background: url('./src/images/contacts_bg.jpg') center center repeat")
+          a(href="contacts.html") contacts
+          .bg(style="background: url('./src/images/foto_contacts_multiplay.jpg') center center no-repeat; background-size: cover")

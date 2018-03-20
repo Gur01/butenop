@@ -15,7 +15,9 @@ module.exports = {
     'index': PATHS.src+'/js/index.js',
     'about': PATHS.src+'/js/about.js',
     'portfolio': PATHS.src+'/js/portfolio.js',
-    'reviews': PATHS.src+'/js/reviews.js'
+    'artist': PATHS.src+'/js/artist.js',
+    'publications': PATHS.src+'/js/publications.js',
+    'contacts': PATHS.src+'/js/contacts.js'
   },
   output: {
     path: PATHS.dist,
@@ -56,8 +58,8 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'images/',
-              publicPath: '../'
+              outputPath: '../dist/images',
+              publicPath: '../images/'
             }  
           }
         ]
@@ -67,8 +69,8 @@ module.exports = {
         loader: "file-loader",
         options: {
           name: "[name].[ext]",
-          outputPath: 'fonts/',
-          publicPath: '../'
+          outputPath: '../dist/fonts',
+          publicPath: '../fonts/'
 
         }
       },
@@ -82,9 +84,9 @@ module.exports = {
       template:  PATHS.src + '/index.pug'
     }),    
     new HtmlWebpackPlugin({
-      filename: 'reviews.html',
-      chunks: ['reviews'],
-      template:  PATHS.src + '/reviews.pug'
+      filename: 'publications.html',
+      chunks: ['publications'],
+      template:  PATHS.src + '/publications.pug'
     }),    
     new HtmlWebpackPlugin({
       filename: 'portfolio.html',
@@ -92,9 +94,19 @@ module.exports = {
       template:  PATHS.src + '/portfolio.pug'
     }),
     new HtmlWebpackPlugin({
+      filename: 'artist.html',
+      chunks: ['artist'],
+      template:  PATHS.src + '/artist.pug'
+    }),
+    new HtmlWebpackPlugin({
       filename: 'about.html',
       chunks: ['about'],
       template:  PATHS.src + '/about.pug'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'contacts.html',
+      chunks: ['contacts'],
+      template:  PATHS.src + '/contacts.pug'
     }),
     new ExtractTextPlugin("css/style.css"),
     new WebpackNotifierPlugin({

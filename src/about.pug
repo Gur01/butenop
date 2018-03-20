@@ -1,20 +1,20 @@
 extends ./pug/templates/base
 block vars
-  - var title='Olga Butenop portfolio'
+  - var title='About Olga Butenop'
 block content
   .page-about.page
-    header.page-header(style="background: url('./src/images/foto_multiplay.jpg') 0 0 no-repeat; background-size: cover;    background-attachment: fixed")
-      .header-languages
+    header.page-header(style="background: url('./src/images/foto_multiplay.jpg') center center no-repeat; background-size: cover; background-attachment: fixed")
+      .header-languages.hide
         span.lang ru
         span.icon-multiply
         span.lang.active en
       .header
-        h1 About (CV)
-      .header-scroller#header-scroller
+        h1 About(CV)
+      .header-scroller.hide#header-scroller
         span scroll
         span.icon-download-arrow
 
-      .header-links
+      .header-links.hide
         ul
           li
             a(href="#exhibitions") Exgibitions, festivals
@@ -30,7 +30,7 @@ block content
 
         h3(id='exhibitions') Exhibitions, festivals:
 
-        b 2017 
+        b 2017
         ul
           li "Workshop 20’17". "Where no one dreams: from sacred geography to no-place". Moscow Museum of Modern Art (MMOMA). Russia, Moscow.
           li Borderline Conditions. Self-organized pop-up exhibition. MERES art space. Nicosia. Cyprus
@@ -46,17 +46,17 @@ block content
           li The exhibition project "Antimuseum". "Elektromuzey". Russia, Moscow.
           li Exhibition "Crime scene". Art space “Polygraphy Hall”. Russia. Moscow
         b 2015
-          ul
-            li Video program "Limits of transparency" at the opening of the exhibition "Panopticon" (a Special Program 6th Biennale of Contemporary Art), curator Marina Ragozina.
-            li "Return a 15 percent when purchasing a set of". Bogorodskoe gallery. Russia. Moscow
-            li "Return a 15 percent when purchasing a set of". Bogorodskoe gallery. Russia. Moscow
-            li Video show Videoformes pop-up within the Polytech.Science.Art. Russia, Moscow
-            li Exhibition "The Artistic Community of Moscow". Moscow museum. Russia, Moscow
-            li "Workshop 20’15". Sub observationem. Moscow Museum of Modern Art (MMOMA). Russia, Moscow.
-            li The exhibition "Goodnight." Vadim Siddur Museum within the "Night at the Museum". Project with Natalie Alexander 
-            li "Military Museum". Moscow Museum of Modern Art (MMOMA). Russia, Moscow.
-            li SWATCH & MMOMA POP-UP GALLERY. Videoart from the collection of MMOMA. Russia, Moscow
-            li International Art Festival Я - I AM. Russia, Moscow
+        ul
+          li Video program "Limits of transparency" at the opening of the exhibition "Panopticon" (a Special Program 6th Biennale of Contemporary Art), curator Marina Ragozina.
+          li "Return a 15 percent when purchasing a set of". Bogorodskoe gallery. Russia. Moscow
+          li "Return a 15 percent when purchasing a set of". Bogorodskoe gallery. Russia. Moscow
+          li Video show Videoformes pop-up within the Polytech.Science.Art. Russia, Moscow
+          li Exhibition "The Artistic Community of Moscow". Moscow museum. Russia, Moscow
+          li "Workshop 20’15". Sub observationem. Moscow Museum of Modern Art (MMOMA). Russia, Moscow.
+          li The exhibition "Goodnight." Vadim Siddur Museum within the "Night at the Museum". Project with Natalie Alexander 
+          li "Military Museum". Moscow Museum of Modern Art (MMOMA). Russia, Moscow.
+          li SWATCH & MMOMA POP-UP GALLERY. Videoart from the collection of MMOMA. Russia, Moscow
+          li International Art Festival Я - I AM. Russia, Moscow
         b 2014
         ul
           li IV Krasnoyarsk International Media Art Festival. Krasnoyarsk, Russia. Special award in the nomination "video work"
@@ -107,14 +107,11 @@ block content
         ul
           li Special award in the nomination "Video work" on IV Krasnoyarsk International Media Art Festival. Krasnoyarsk, Russia, 2014.
 
-
         h3 Rating
         ul
           li InArt Rating of 100 Young Artists 
 
-
         h3 Group projects
-
         p 2013 – Art event "Trolleybus exhibition" Moscow, Russia.
         p 2013 –"Palimpsest. Glow" a 12-hour happening at the I.Kabokov's workshop" Moscow, Russia.
 
@@ -127,6 +124,6 @@ block content
         p Author of the project:<br>Media project "ART UZEL" - all about contemporary art
 
 
-        a(href='Publications.html' class='h2-like') Publications, reviews, interviews
+        a(href='publications.html' class='h2-like') Publications, reviews, interviews
 
 

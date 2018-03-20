@@ -29,3 +29,21 @@
 .zoomIn {
   animation-name: zoomIn;
 }
+
+@keyframes push-multiply {
+  50% {
+   transform: scale(.6) rotate(90deg);
+  }
+}
+.push-multiply {
+  animation-name: push-multiply;
+}
+
+@keyframes hover-arrow {
+  50% {
+    transform: scale(.8);
+  }
+}
+.hover-arrow {
+  animation-name: hover-arrow;
+}

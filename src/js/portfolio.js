@@ -1,3 +1,4 @@
+'use strict';
 const css = require('../sass/style.sass');
 
 // $('#headerLanguagesId').addClass('hide');
@@ -16,121 +17,106 @@ $(document).ready(function(){
     // console.log('ok');
   });
 
+  //header paralax
+  $(window).on('scroll', function(){
+    var scrollY = $(this).scrollTop();
+    var pos = 'center ' +  (-scrollY/10) + 'px';
+
+    $('header').css({'background-position': pos});
+  });
+
   //side-scroller
-  var scrollHeight = $(document).height() - window.innerHeight;
-  
-  $(window).on('resize', function(){
-    scrollHeight = $(document).height() - window.innerHeight;
-  });
-
-  $(window).scroll(function(){
-    scrollSidebar();
-  });
-
-  clickSidebar();
-  //console.log($('#side_scroller').find('span').length)
-
-  function scrollSidebar(){
+    var dotsNumber = 8;
     var pos = $(window).scrollTop();
-    // var scrollBar = document.getElementById('side_scroller');
-    // var dots = scrollBar.getElementsByTagName('span');
-    // var dotsLength = dots.length;
-    // for(var key in dots) {
-    //   console.log(dots[key]);
-    // }
+    var scrollH = scrollHeight();
+    dots(dotsNumber); //dinamicaly adding dots
+    if(pos==0) $('#up_arrow+span').addClass('active'); //add first active button
+    scrollSidebar(dotsNumber); //change active dot
+    clickSidebar(); //events on click on dots
+    arrowsClick(); //events on click on arrows
 
-    var i = 0;
-    if ( pos > 0 && pos < scrollHeight * (1/8) ) {
-      $('#one').addClass('active').siblings('span').removeClass();
+    if( $(window).width()<768 ) {
+      $('#side_scroller').hide();
     }
-    if ( pos > scrollHeight * (1/8) && pos < scrollHeight * (2/8) ) {
-      $('#two').addClass('active').siblings('span').removeClass();
+    
+    $(window).on('resize', function(){
+      if($(window).width()<768) {
+        $('#side_scroller').hide();
+      } else {
+        $('#side_scroller').show();
+      }
+
+    });
+
+    $(window).on('scroll', function(){
+      scrollSidebar(dotsNumber);
+    }); 
+  
+  function scrollHeight(){
+    return $(document).height() - window.innerHeight;
+  }
+  function dots(dotsNum){
+    var str = "<div class='side-scroller hide' id='side_scroller' style='transition:opacity 2s ease;' ><div data-dir='prev' class='arrow icon-down-arrow' id='up_arrow'></div><div data-dir='next' class='arrow icon-down-arrow' id='down_arrow'></div></div>";
+    $('header').append(str);
+    var resStr = ''
+    for(var i=1; i<=dotsNum;i++) {
+      var spanStr="<span data-dot='" + i + "' id='dotId" + i +"' class='dot" + i +"'></span>";
+      resStr+=spanStr
     }
-    if ( pos > scrollHeight * (2/8) && pos < scrollHeight * (3/8) ) {
-      $('#three').addClass('active').siblings('span').removeClass();
-    }
-    if ( pos > scrollHeight * (3/8) && pos < scrollHeight * (4/8) ) {
-      $('#four').addClass('active').siblings('span').removeClass();
-    }
-    if ( pos > scrollHeight * (4/8) && pos < scrollHeight * (5/8) ) {
-      $('#five').addClass('active').siblings('span').removeClass();
-    }
-    if ( pos > scrollHeight * (5/8) && pos < scrollHeight * (6/8) ) {
-      $('#six').addClass('active').siblings('span').removeClass();
-    }
-    if ( pos > scrollHeight * (6/8) && pos < scrollHeight * (7/8) ) {
-      $('#seven').addClass('active').siblings('span').removeClass();
-    }
-    if ( pos > scrollHeight * (7/8) && pos < scrollHeight ) {
-      $('#eight').addClass('active').siblings('span').removeClass();
+    
+    $('#up_arrow').after(resStr);
+    $('#side_scroller').animate({'transition': 'opacity 2s ease'}, 800).removeClass('hide');
+  }
+  function scrollSidebar(dotsNumber){
+    var pos = $(window).scrollTop();
+    for (var i = 0; i<dotsNumber; i++) {
+      if ( pos > scrollH * (i/dotsNumber)  && pos < scrollH * (i+1/dotsNumber) ) {
+        var id = '#dotId' + (i+1);
+        $(id).addClass('active').siblings('span').removeClass('active');
+      }
     }
   }
   
-function clickSidebar(){
-  $('#side_scroller').children('span').on('click', function(){
-  
-    var elem = $(this).data('page');
-    if(elem == 'one') {
-      $("body,html").animate({'scrollTop': 0}, '300');
-    }    
-    if(elem == 'two') {
-      $("body,html").animate({'scrollTop': scrollHeight * (1/8)+1}, '300');
-    }
-    if(elem == 'three') {
-      $("body,html").animate({'scrollTop': scrollHeight * (2/8)+1}, '300');
-    }
-    if(elem == 'four') {
-      $("body,html").animate({'scrollTop': scrollHeight * (3/8)+1}, '300');
-    }
-    if(elem == 'five') {
-      $("body,html").animate({'scrollTop': scrollHeight * (4/8)+1}, '300');
-    }
-    if(elem == 'six') {
-      $("body,html").animate({'scrollTop': scrollHeight * (5/8)+1}, '300');
-    }
-    if(elem == 'seven') {
-      $("body,html").animate({'scrollTop': scrollHeight * (6/8)+1}, '300');
-    }
-    if(elem == 'eight') {
-      $("body,html").animate({'scrollTop': scrollHeight+1 }, '300');
-    }
-});
+  function clickSidebar(){
+    $('#side_scroller').children('span').on('click', function(){
+      var elem = $(this).data('dot');
 
-}
-
-  $('#up_arrow').on('click', function(){
-
-      var elem = $('#side_scroller').find('.active').data('page');
-
-      if(elem == 'one') {
-        $("body,html").animate({'scrollTop': scrollHeight}, '300');
-      }    
-      if(elem == 'two') {
-        $("body,html").animate({'scrollTop': scrollHeight * (1/8)}, '300');
-      }
-      if(elem == 'three') {
-        $("body,html").animate({'scrollTop': scrollHeight * (2/8)}, '300');
-      }
-      if(elem == 'four') {
-        $("body,html").animate({'scrollTop': scrollHeight * (3/8)}, '300');
-      }
-      if(elem == 'five') {
-        $("body,html").animate({'scrollTop': scrollHeight * (4/8)}, '300');
-      }
-      if(elem == 'six') {
-        $("body,html").animate({'scrollTop': scrollHeight * (5/8)}, '300');
-      }
-      if(elem == 'seven') {
-        $("body,html").animate({'scrollTop': scrollHeight * (6/8)}, '300');
-      }
-      if(elem == 'eight') {
-        $("body,html").animate({'scrollTop': scrollHeight * (7/8)}, '300');
-      }
-      scrollingSidebar();
-
-    // }
+      $("body,html").animate({'scrollTop': scrollH * ((elem-1)/dotsNumber)+1}, '300');
   });
 
-})
+}
+  function arrowsClick(){
+    $('#side_scroller>.arrow').on('click', function(){
+
+      var dir = $(this).data('dir');
+      var activeNum = $('#side_scroller').find('.active').data('dot');
+      var elem;
+
+      if(dir == 'prev') {
+        elem = activeNum-1;
+      } else {
+        elem = activeNum+1;
+      }
+
+      if(elem>dotsNumber) elem = 1;
+      if(elem == 0) elem = dotsNumber;
+
+      $("body,html").animate({'scrollTop': scrollH * ((elem-1)/dotsNumber)+1}, '300');
+
+    });
+
+  }
+
+  //multiply button
+  $('.icon-multiply').click(function(){
+    window.location.href = 'index.html';
+  });
+
+  
+
+
+
+
+});
 
 

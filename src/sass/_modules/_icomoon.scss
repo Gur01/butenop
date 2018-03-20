@@ -1,0 +1,44 @@
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-down-arrow:before {
+  content: "\e900";
+}
+.icon-download-arrow:before {
+  content: "\e901";
+  color: #fff;
+}
+.icon-left-arrow:before {
+  content: "\e902";
+}
+.icon-multiply:before {
+  content: "\e903";
+  color: #fff;
+}
+.icon-arroba:before {
+  content: "\e904";
+}
+.icon-facebook-logo:before {
+  content: "\e905";
+}
+.icon-instagram-logo:before {
+  content: "\e906";
+}
+.icon-phone-call:before {
+  content: "\e907";
+}
+.icon-vk-logo:before {
+  content: "\e908";
+}

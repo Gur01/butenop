@@ -1,16 +1,19 @@
 extends ./pug/templates/base
 block vars
-  - var title='Olga Butenop portfolio'
+  - var title='Olga Butenop publications'
 block content
-  .page-reviews.page
-    header.page-header(style="background: url('./src/images/foto_publikationst_multiplay.jpg') 0 0 no-repeat; background-size: cover;    background-attachment: fixed")
-      .header-languages
+  .page-publications.page
+    header.page-header(style="background: url('./src/images/foto_publikationst_multiplay.jpg') center center no-repeat; background-size: cover;    background-attachment: fixed")
+      .header-languages.hide
         span.lang ru
         span.icon-multiply
         span.lang.active en
       .header
-        h1 PUBLICATIONS, REVIEWS, INTERVIEWS
-      .header-scroller#header-scroller
+        h1
+        script
+          | document.querySelector('h1').textContent = document.body.clientWidth < 1100 ? 
+          | 'publications': 'publications, reviwes, interviews';
+      .header-scroller#header-scroller.hide
         span scroll
         span.icon-download-arrow
     .content

@@ -3,7 +3,7 @@ block vars
   - var title='Olga Butenop portfolio'
 block content
   .page-portfolio.page
-    header.page-header(style="background: url('./src/images/portfolio_page_bg.jpg') 0 0 no-repeat; background-size: cover;background-attachment: fixed")
+    header.page-header(style="background: url('./src/images/portfolio_page_bg.jpg') center center no-repeat; background-size: cover;background-attachment: fixed")
       .header-languages.hide#headerLanguagesId
         span.lang ru
         span.icon-multiply
@@ -13,18 +13,7 @@ block content
       .header-scroller.hide#header-scroller
         span scroll
         span.icon-download-arrow
-      .side-scroller.hide#side_scroller
-        .icon-down-arrow#up_arrow
-        span(data-page='one', id='one', class='active')
-        span(data-page='two', id='two')
-        span(data-page='three', id='three')
-        span(data-page='four', id='four')
-        span(data-page='five', id='five')
-        span(data-page='six', id='six')
-        span(data-page='seven', id='seven')
-        span(data-page='eight', id='eight')
-        .icon-down-arrow#down_arrow
-
+      
     section.current-project(style="background: url('./src/images/foto.jpg') center center no-repeat; background-size: cover;")
       h3 Current project in one photo
       .current-project-overlay

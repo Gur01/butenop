@@ -1,0 +1,68 @@
+.page-contacts
+  .content
+    background: url('../images/portfolio_bg2.jpg') 0 0 repeat
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    justify-content: center
+    align-items: center      
+    .content-wrapper
+      max-width: 1100px
+      width: 100%
+      padding: 0
+      padding-bottom: 30px
+      .contacts-info
+        .first-line
+          margin-bottom: 130px
+          @media(max-width: 520px)
+            margin-bottom: 0
+          span
+            letter-spacing: 2px
+
+        .row, .row-first
+          display: flex
+          flex-direction: row
+          flex-wrap: wrap
+          justify-content: space-around
+          color: #fff
+          @media(max-width: 520px)
+            display: block
+          span,a
+            font-size: 24px
+            display: block
+            text-align: center
+            @media(max-width: 960px)
+              font-size: 20px
+
+
+          span[class^="icon-"], 
+          span[class*=" icon-"],
+          a
+            font-size: 100px
+            color: #fff
+            margin: 42px 86px
+            text-decoration: none
+            transition: all .3s ease
+            @media(max-width: 960px)
+              font-size: 80px
+              margin: 22px 66px
+            @media(max-width: 730px)
+              margin: 22px 0
+        .row-first
+          div[class$=block]
+            margin: 0 60px
+            @media(max-width: 960px)
+              margin: 0 70px
+            @media(max-width: 725px)
+              margin: 0
+            @media(max-width: 520px)
+              margin-top: 60px
+
+        .second-line
+          a
+            padding: 10px
+            display: inline-block
+            @media(max-width: 520px)
+              display: block
+              margin-top: 60px

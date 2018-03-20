@@ -1,0 +1,31 @@
+extends ./pug/templates/base
+block vars
+  - var title='Artist Olga Butenop'
+block content
+  .page-contacts.page
+    header.page-header(style="background: url('./src/images/foto_contacts_multiplay.jpg') center center no-repeat; background-size: cover; background-attachment: fixed")
+      .header-languages.hide
+        span.lang ru
+        span.icon-multiply
+        span.lang.active en
+      .header
+        h1 contacts
+      .header-scroller.hide#header-scroller
+        span scroll
+        span.icon-download-arrow
+
+    .content
+      .content-wrapper
+        .contacts-info
+          .first-line.row.row-first
+            .arroba-block
+              span.icon-arroba
+              span glazenap@mail.ru
+
+            .phone-block
+              span.icon-phone-call
+              span 8-916-916-99-99
+          .second-line.row
+            a.icon-facebook-logo(href="facebook.com")
+            a.icon-vk-logo(href="vk.com")
+            a.icon-instagram-logo(href="#")
